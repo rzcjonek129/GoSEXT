@@ -1,4 +1,5 @@
 local ver = "1.00"
+PrintChat(string.format("<b><font color='#EE2EC'>RATzone Ignite Loaded... go to the site for more http://ratzone.eu "))
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
@@ -8,7 +9,6 @@ function AutoUpdate(data)
 end
 GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
 
-PrintChat("Thanks for using RATzone Ignite go to site: http://ratzone.eu")
 local ignite = nil
 
 if GetCastName(myHero, SUMMONER_1):lower():find("summonerdot") then
