@@ -1,7 +1,7 @@
 local ver = "1.00"
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
-        DownloadFileAsync("https://raw.githubusercontent.com/gamsteron/GameOnSteroids/master/AutoIGN.lua", SCRIPT_PATH .. "AutoIGN.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
+        DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
     else
         PrintChat(string.format("<font color='#b756c5'>RAT Ignite</font>").."by Ratzone Community updated ! Version: "..ver)
     end
