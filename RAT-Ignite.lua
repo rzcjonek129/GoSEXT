@@ -8,7 +8,6 @@ function AutoUpdate(data)
     end
 end
 GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
-
 local ignite = nil
 
 if GetCastName(myHero, SUMMONER_1):lower():find("summonerdot") then
