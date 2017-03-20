@@ -8,8 +8,7 @@ function AutoUpdate(data)
 end
 GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
 
-print"(Thanks for using RATzone Ignite go to site: http://ratzone.eu)"
-
+PrintChat('Thanks for using RATzone Ignite go to site: http://ratzone.eu')
 local ignite = nil
 
 if GetCastName(myHero, SUMMONER_1):lower():find("summonerdot") then
