@@ -8,6 +8,8 @@ function AutoUpdate(data)
 end
 GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
 
+printchat"(Thanks for using RATzone Ignite go to site: http://ratzone.eu")"
+
 local ignite = nil
 
 if GetCastName(myHero, SUMMONER_1):lower():find("summonerdot") then
@@ -21,7 +23,7 @@ if ignite == nil then
         return
 end
 
-GSOAI = MenuConfig("gsoai", "GamSterOn Auto Ignite")
+GSOAI = MenuConfig("gsoai", "RATzone Ignite")
 GSOAI:Slider("HEALTH", "Minimum Enemy HP + Player Lvl * 5", 50,25,200,25)
 GSOAI:Boolean("BARRIER", "Calculate Barrier", true)
 GSOAI:Boolean("SHIELD", "Calculate other shields", false)
