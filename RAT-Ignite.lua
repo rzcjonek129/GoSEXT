@@ -6,7 +6,7 @@ function AutoUpdate(data)
         PrintChat(string.format("<font color='#b756c5'>RAT Ignite</font>").."by Ratzone Community updated ! Version: "..ver)
     end
 end
-GetWebResultAsync("https://raw.githubusercontent.com/gamsteron/GameOnSteroids/master/AutoIGN.version", AutoUpdate)
+GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
 
 local ignite = nil
 
