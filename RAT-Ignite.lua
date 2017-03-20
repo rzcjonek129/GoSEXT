@@ -8,7 +8,7 @@ function AutoUpdate(data)
 end
 GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
 
-printchat"(Thanks for using RATzone Ignite go to site: http://ratzone.eu")"
+print"(Thanks for using RATzone Ignite go to site: http://ratzone.eu)"
 
 local ignite = nil
 
