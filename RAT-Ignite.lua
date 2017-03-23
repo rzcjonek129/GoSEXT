@@ -2,7 +2,7 @@ local ver = "1.00"
 PrintChat(string.format("<b><font color='#EE2EC'>RATzone Ignite Loaded... go to the site for more http://ratzone.eu "))
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
-        DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("Please 2x F6 to update RAT-Ignite") return end)
+        DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("Update Complete, please 2x F6!"..ver) return end)
     else
         PrintChat(string.format("<font color='#b756c5'>RAT Ignite</font>").."by Ratzone Community updated ! Version: "..ver)
     end
