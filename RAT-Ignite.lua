@@ -1,4 +1,4 @@
-local ver = "1.00"
+local ver = "1.02"
 PrintChat(string.format("<b><font color='#EE2EC'>RATzone Ignite Loaded... go to the site for more http://ratzone.eu "))
 function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
