@@ -21,27 +21,27 @@ if ignite == nil then
         return
 end
 
-GSOAI = MenuConfig("gsoai", "RATzone Ignite")
-GSOAI:Slider("HEALTH", "Minimum Enemy HP + Player Lvl * 5", 50,25,200,25)
-GSOAI:Boolean("BARRIER", "Calculate Barrier", true)
-GSOAI:Boolean("SHIELD", "Calculate other shields", false)
+RatApi = MenuConfig("RatApi", "RATzone Ignite")
+RatApi:Slider("HEALTH", "Minimum Enemy HP + Player Lvl * 5", 50,25,200,25)
+RatApi:Boolean("BARRIER", "Calculate Barrier", true)
+RatApi:Boolean("SHIELD", "Calculate other shields", false)
 
 OnLoad(function()
         for i,o in pairs(GetEnemyHeroes()) do
-                GSOAI:Boolean(GetObjectName(o), GetObjectName(o), true)
+                RatApi:Boolean(GetObjectName(o), GetObjectName(o), true)
         end
 end)
 
 OnTick(function (myHero)
         local level = GetLevel(myHero)
         local dmg = 50 + (20 * level)
-        local minhp = GSOAI.HEALTH:Value() + ( level * 5 )
-        local barrier = GSOAI.BARRIER:Value()
-        local shield = GSOAI.SHIELD:Value()
+        local minhp = RatApi.HEALTH:Value() + ( level * 5 )
+        local barrier = RatApi.BARRIER:Value()
+        local shield = RatApi.SHIELD:Value()
         if ignite ~= nil then
                 if Ready(ignite) then
                         for i, enemy in pairs(GetEnemyHeroes()) do
-                                if ValidTarget(enemy, 600) and GSOAI[GetObjectName(enemy)]:Value() then
+                                if ValidTarget(enemy, 600) and RatApi[GetObjectName(enemy)]:Value() then
                                         local currenthp = GetCurrentHP(enemy)
                                         local regenhp = GetHPRegen(enemy)
                                         local hp = currenthp + regenhp + ( regenhp * 5 * 0.6 )
