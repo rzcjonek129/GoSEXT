@@ -4,7 +4,7 @@ function AutoUpdate(data)
     if tonumber(data) > tonumber(ver) then
         DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("Update Complete, please 2x F6!"..ver) return end)
     else
-        PrintChat(string.format("<font color='#b756c5'>RAT Ignite</font>").."by Ratzone Community updated ! Version: "..ver)
+        PrintChat(string.format("<font color='#b756c5'>RAT Ignite</font>").." by Ratzone Community updated ! Version: "..ver)
     end
 end
 GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
