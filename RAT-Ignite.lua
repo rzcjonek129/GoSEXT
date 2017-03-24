@@ -1,27 +1,28 @@
-local ver = "1.02"
-PrintChat(string.format("<b><font color='#EE2EC'>RATzone Ignite Loaded... go to the site for more http://ratzone.eu "))
-function AutoUpdate(data)
-    if tonumber(data) > tonumber(ver) then
-        DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("Update Complete, please 2x F6!"..ver) return end)
-    else
-        PrintChat(string.format("<font color='#b756c5'>RAT Ignite</font>").." by Ratzone Community updated ! Version: "..ver)
+local ver = "1.00"
+PrintChat(string.format("<b><font color='#EE2EC'>RATzone RATignite Loaded... go to the site for more http://ratzone.eu "))
+if GetUser() ~= "jonek129" then 
+  GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", function(data)
+    if tonumber(data) > RAT-IgniteVersion then
+      PrintChat("<b><font color='#EE2EC'>RAT-Ignite - </font></b> New version found! " ..data.." Downloading update, please wait...")
+      DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("<b><font color='#EE2EC'>RAT-Ignite - </font></b> Updated from v"..tostring(ChallengerBaseultVersion).." to v"..data..". Please press F6 twice to reload.") return end)
     end
+  end)
 end
-GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", AutoUpdate)
-local ignite = nil
+
+local RATignite = nil
 
 if GetCastName(myHero, SUMMONER_1):lower():find("summonerdot") then
-        ignite = SUMMONER_1
+        RATignite = SUMMONER_1
 end
 if GetCastName(myHero, SUMMONER_2):lower():find("summonerdot") then
-        ignite = SUMMONER_2
+        RATignite = SUMMONER_2
 end
 
-if ignite == nil then
+if RATignite == nil then
         return
 end
 
-RatApi = MenuConfig("RatApi", "RATzone Ignite")
+RatApi = MenuConfig("RatApi", "RATzone RATignite")
 RatApi:Slider("HEALTH", "Minimum Enemy HP + Player Lvl * 5", 50,25,200,25)
 RatApi:Boolean("BARRIER", "Calculate Barrier", true)
 RatApi:Boolean("SHIELD", "Calculate other shields", false)
@@ -38,8 +39,8 @@ OnTick(function (myHero)
         local minhp = RatApi.HEALTH:Value() + ( level * 5 )
         local barrier = RatApi.BARRIER:Value()
         local shield = RatApi.SHIELD:Value()
-        if ignite ~= nil then
-                if Ready(ignite) then
+        if RATignite ~= nil then
+                if Ready(RATignite) then
                         for i, enemy in pairs(GetEnemyHeroes()) do
                                 if ValidTarget(enemy, 600) and RatApi[GetObjectName(enemy)]:Value() then
                                         local currenthp = GetCurrentHP(enemy)
@@ -51,7 +52,7 @@ OnTick(function (myHero)
                                                 hp = hp + GetDmgShield(enemy)
                                         end
                                         if hp > minhp and hp <= dmg then
-                                                CastTargetSpell(enemy, ignite)
+                                                CastTargetSpell(enemy, RATignite)
                                         end
                                 end
                         end
