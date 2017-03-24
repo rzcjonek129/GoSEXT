@@ -2,7 +2,7 @@ local ver = "1.00"
 PrintChat(string.format("<b><font color='#EE2EC'>RATzone RATignite Loaded... go to the site for more http://ratzone.eu "))
 if GetUser() ~= "jonek129" then 
   GetWebResultAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/Version%20Folder/RAT-Ignite.version", function(data)
-    if tonumber(data) > RAT-IgniteVersion then
+    if tonumber(data) > RatIgniteVersion then
       PrintChat("<b><font color='#EE2EC'>RAT-Ignite - </font></b> New version found! " ..data.." Downloading update, please wait...")
       DownloadFileAsync("https://raw.githubusercontent.com/rzcjonek129/GoSEXT/master/RAT-Ignite.lua", SCRIPT_PATH .. "RAT-Ignite.lua", function() PrintChat("<b><font color='#EE2EC'>RAT-Ignite - </font></b> Updated from v"..tostring(ChallengerBaseultVersion).." to v"..data..". Please press F6 twice to reload.") return end)
     end
